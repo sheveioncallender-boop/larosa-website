@@ -1,0 +1,91 @@
+<odoo>
+  <data noupdate="1">
+    <record id="page_home" model="website.page">
+      <field name="name">Home</field>
+      <field name="url">/la-rosa-home</field>
+      <field name="type">qweb</field>
+      <field name="key">larosa_website.page_home</field>
+      <field name="website_id" ref="website.default_website"/>
+      <field name="is_published" eval="True"/>
+      <field name="website_meta_title">Home | La Rosa Arts, Crafts &amp; Stationery</field>
+      <field name="website_meta_description">Arts, crafts and stationery in Santa Cruz. Discover La Rosa at North Hills Plaza. Call 868 463-4578.</field>
+      <field name="arch" type="xml">
+        <t t-name="larosa_website.page_home">
+          <t t-call="website.layout">
+            <div id="wrap" class="lr-content lr-home oe_structure"><section class="lr-hero" data-snippet="s_text_block" data-name="La Rosa Welcome">
+ <div class="lr-hero-copy"><span class="lr-eyebrow"><span class="lr-small-flower" aria-hidden="true">✻</span> ARTS · CRAFTS · STATIONERY</span><h1>A little colour.<br/><em>Endless<br/>possibility.</em></h1><p>For the artist, the maker, the list writer.<br/>Find something for every side of you.</p><div class="lr-hero-actions"><a href="/shop" class="lr-button">Find your inspiration <i class="fa fa-long-arrow-right lr-arrow-icon" aria-hidden="true"/></a><a href="/visit-la-rosa" class="lr-text-link">Visit our store</a></div><div class="lr-hero-note"><span class="lr-colour-dots" aria-hidden="true"><span/><span/><span/><span/></span><span>A world of ideas. A neighbourhood welcome.</span></div></div>
+ <div class="lr-hero-photo"><img src="/larosa_website/static/src/img/watercolour.webp" alt="Paintbrushes and a watercolour palette beside hand-painted roses" width="1000" height="665" fetchpriority="high" decoding="async"/><div class="lr-hero-tag"><span>Made for</span><strong>your imagination.</strong><span class="lr-tag-star" aria-hidden="true">✻</span></div><span class="lr-photo-label">MAKE SOMETHING BEAUTIFUL.</span></div>
+</section>
+<section class="lr-ribbon" aria-label="At La Rosa"><div class="lr-container"><span>For little projects</span><span aria-hidden="true">✻</span><span>And big imaginations</span><span aria-hidden="true">✻</span><span>Made with a little love</span><span aria-hidden="true">✻</span><span>Right here in Santa Cruz</span></div></section>
+<t t-call="larosa_website.departments"/>
+<t t-call="larosa_website.featured_products"/>
+<section class="lr-project-section lr-section" data-snippet="s_text_block" data-name="Create with La Rosa"><div class="lr-container lr-project-grid"><div class="lr-project-photo lr-reveal"><img src="/larosa_website/static/src/img/studio.webp" alt="Paintbrushes and coloured pencils in an artist’s workspace" width="1800" height="1202" loading="lazy"/><span class="lr-photo-stamp">A LITTLE<br/><em>creative joy.</em></span></div><div class="lr-project-copy lr-reveal"><span class="lr-eyebrow">LESS SCROLLING. MORE MAKING.</span><h2>Make time for<br/>what makes<br/>you <em>happy.</em></h2><p>A painted card. A colourful school project. A fresh page in your notebook. There’s something special about making it your own.</p><p>Let La Rosa be your starting point.</p><a class="lr-button" href="/creative-corner">Step into the Creative Corner <i class="fa fa-long-arrow-right lr-arrow-icon" aria-hidden="true"/></a></div></div></section>
+<section class="lr-paper-strip" data-snippet="s_text_block" data-name="School and everyday essentials"><div class="lr-container"><div><span class="lr-eyebrow">SCHOOL DAYS. WORK DAYS. YOUR DAYS.</span><h2>Ready for your<br/><em>next chapter.</em></h2><a t-att-href="website._larosa_category_url('category_school')" class="lr-text-link">Explore school essentials <i class="fa fa-long-arrow-right lr-arrow-icon" aria-hidden="true"/></a></div><img src="/larosa_website/static/src/img/pencils.webp" alt="Colour pencils ready for a new project" width="1000" height="667" loading="lazy"/></div></section>
+<t t-call="larosa_website.visit_banner"/></div>
+          </t>
+        </t>
+      </field>
+    </record>
+    <record id="page_ideas" model="website.page">
+      <field name="name">Creative Corner</field>
+      <field name="url">/creative-corner</field>
+      <field name="type">qweb</field>
+      <field name="key">larosa_website.page_ideas</field>
+      <field name="website_id" ref="website.default_website"/>
+      <field name="is_published" eval="True"/>
+      <field name="website_meta_title">Creative Corner | La Rosa Arts, Crafts &amp; Stationery</field>
+      <field name="website_meta_description">Creative ideas for painting, handmade cards and colourful stationery projects at La Rosa.</field>
+      <field name="arch" type="xml">
+        <t t-name="larosa_website.page_ideas">
+          <t t-call="website.layout">
+            <div id="wrap" class="lr-content lr-ideas oe_structure"><section class="lr-page-intro lr-intro-green" data-snippet="s_text_block" data-name="Creative Corner"><div class="lr-container"><span class="lr-eyebrow">THE CREATIVE CORNER</span><h1>Start small.<br/><em>Make it yours.</em></h1><p>A few simple ideas to turn “one day” into a little creative time today.</p></div></section>
+<section class="lr-section lr-ideas" data-snippet="s_text_block" data-name="Creative Projects"><div class="lr-container">
+ <article class="lr-idea-row"><div class="lr-idea-photo"><img src="/larosa_website/static/src/img/watercolour.webp" alt="Watercolour paints and a hand-painted floral design" width="1000" height="665" loading="lazy"/></div><div><span class="lr-eyebrow">01 / A QUIET MOMENT</span><h2>Paint a little<br/><em>something.</em></h2><p>You don’t need a masterpiece in mind. Start with a few colours, a brush and a blank page. Try leaves, loose flowers or simple shapes.</p><ul><li>Choose paper suited to your paint.</li><li>Make a few colour swatches first.</li><li>Let each layer dry before adding another.</li></ul><a t-att-href="website._larosa_category_url('category_art')" class="lr-text-link">Explore art supplies <i class="fa fa-long-arrow-right lr-arrow-icon" aria-hidden="true"/></a></div></article>
+ <article class="lr-idea-row"><div class="lr-idea-photo"><img src="/larosa_website/static/src/img/crafts.webp" alt="Paper pieces, brushes and tools for a handmade craft project" width="1000" height="667" loading="lazy"/></div><div><span class="lr-eyebrow">02 / MADE WITH LOVE</span><h2>A card they’ll<br/><em>want to keep.</em></h2><p>Turn a sheet of card into a personal thank-you, birthday wish or just-because note. The thoughtful touch is the part that matters.</p><ul><li>Fold your card and sketch a simple layout.</li><li>Add layers of paper, colour or a small illustration.</li><li>Finish with a handwritten message.</li></ul><a t-att-href="website._larosa_category_url('category_crafts')" class="lr-text-link">Explore crafts &amp; DIY <i class="fa fa-long-arrow-right lr-arrow-icon" aria-hidden="true"/></a></div></article>
+ <article class="lr-idea-row"><div class="lr-idea-photo"><img src="/larosa_website/static/src/img/pencils.webp" alt="Colourful pencils for journalling, notes and school projects" width="1000" height="667" loading="lazy"/></div><div><span class="lr-eyebrow">03 / A FRESH PAGE</span><h2>Give your ideas<br/><em>some space.</em></h2><p>A colourful planner, project notebook or daily list can bring a little joy to your routine. Make a system that feels like you.</p><ul><li>Choose a notebook you enjoy using.</li><li>Use a few colours to organise your thoughts.</li><li>Leave room for sketches, dreams and discoveries.</li></ul><a t-att-href="website._larosa_category_url('category_stationery')" class="lr-text-link">Explore stationery <i class="fa fa-long-arrow-right lr-arrow-icon" aria-hidden="true"/></a></div></article>
+</div></section><t t-call="larosa_website.visit_banner"/></div>
+          </t>
+        </t>
+      </field>
+    </record>
+    <record id="page_about" model="website.page">
+      <field name="name">Our Story</field>
+      <field name="url">/about-la-rosa</field>
+      <field name="type">qweb</field>
+      <field name="key">larosa_website.page_about</field>
+      <field name="website_id" ref="website.default_website"/>
+      <field name="is_published" eval="True"/>
+      <field name="website_meta_title">Our Story | La Rosa Arts, Crafts &amp; Stationery</field>
+      <field name="website_meta_description">Meet La Rosa, your arts, crafts and stationery shop at North Hills Plaza, Santa Cruz.</field>
+      <field name="arch" type="xml">
+        <t t-name="larosa_website.page_about">
+          <t t-call="website.layout">
+            <div id="wrap" class="lr-content lr-about oe_structure"><section class="lr-page-intro" data-snippet="s_text_block" data-name="Our Story"><div class="lr-container"><span class="lr-eyebrow">HELLO, WE’RE LA ROSA</span><h1>A small spark.<br/><em>A world of ideas.</em></h1><p>Your arts, crafts and stationery stop at North Hills Plaza, Santa Cruz.</p></div></section>
+<section class="lr-section" data-snippet="s_text_block" data-name="About La Rosa"><div class="lr-container lr-project-grid"><div class="lr-project-photo"><img src="/larosa_website/static/src/img/studio.webp" alt="Paintbrushes and pencils ready for creative projects" width="1800" height="1202" loading="lazy"/></div><div class="lr-project-copy"><span class="lr-eyebrow">SOMETHING FOR EVERY SIDE OF YOU</span><h2>Life is better<br/>with a little <em>colour.</em></h2><p>La Rosa brings together art, craft and stationery essentials for the things you love to do — and the things you need to get done.</p><p>From a new creative hobby to a school project or an everyday list, start with an idea and see where it takes you.</p><a href="/shop" class="lr-button">Explore the shop <i class="fa fa-long-arrow-right lr-arrow-icon" aria-hidden="true"/></a></div></div></section>
+<t t-call="larosa_website.departments"/><t t-call="larosa_website.visit_banner"/></div>
+          </t>
+        </t>
+      </field>
+    </record>
+    <record id="page_contact" model="website.page">
+      <field name="name">Visit Us</field>
+      <field name="url">/visit-la-rosa</field>
+      <field name="type">qweb</field>
+      <field name="key">larosa_website.page_contact</field>
+      <field name="website_id" ref="website.default_website"/>
+      <field name="is_published" eval="True"/>
+      <field name="website_meta_title">Visit Us | La Rosa Arts, Crafts &amp; Stationery</field>
+      <field name="website_meta_description">Get directions to La Rosa at North Hills Plaza, Santa Cruz, Trinidad and Tobago. Call or WhatsApp 868 463-4578.</field>
+      <field name="arch" type="xml">
+        <t t-name="larosa_website.page_contact">
+          <t t-call="website.layout">
+            <div id="wrap" class="lr-content lr-contact oe_structure"><section class="lr-page-intro" data-snippet="s_text_block" data-name="Visit La Rosa"><div class="lr-container"><span class="lr-eyebrow">COME SAY HELLO</span><h1>Your next idea<br/><em>is closer than you think.</em></h1><p>Visit La Rosa at North Hills Plaza, Santa Cruz.</p></div></section>
+<section class="lr-section" data-snippet="s_text_block" data-name="La Rosa Contact Details"><div class="lr-container lr-contact-grid"><div class="lr-contact-info"><div class="lr-contact-block"><span class="lr-eyebrow">FIND US</span><h2>La Rosa</h2><p class="lr-address" t-out="website.larosa_address"/><a t-att-href="website._larosa_directions_url()" class="lr-button" target="_blank" rel="noopener noreferrer">Get directions <i class="fa fa-long-arrow-right lr-arrow-icon" aria-hidden="true"/></a></div><div class="lr-contact-block"><span class="lr-eyebrow">LET’S TALK</span><t t-call="larosa_website.phone_link"/><p>Looking for something for your next project? Give us a call or send us a message.</p><a t-if="website._larosa_whatsapp_url()" t-att-href="website._larosa_whatsapp_url()" class="lr-text-link" target="_blank" rel="noopener noreferrer"><i class="fa fa-whatsapp" aria-hidden="true"/> Message us on WhatsApp <i class="fa fa-long-arrow-right lr-arrow-icon" aria-hidden="true"/></a></div><div class="lr-contact-block"><span class="lr-eyebrow">PLAN YOUR VISIT</span><p t-if="website.larosa_hours" class="lr-address" t-out="website.larosa_hours"/><p t-else="">Please call or WhatsApp us for current opening hours.</p></div></div><div class="lr-map-wrap"><iframe t-att-src="website._larosa_map_url()" title="Map to North Hills Plaza, Santa Cruz, Trinidad and Tobago" width="800" height="650" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen="allowfullscreen"/><div class="lr-map-caption"><i class="fa fa-map-marker" aria-hidden="true"/> North Hills Plaza · Santa Cruz <a t-att-href="website._larosa_directions_url()" target="_blank" rel="noopener noreferrer">Open in Maps <i class="fa fa-long-arrow-right lr-arrow-icon" aria-hidden="true"/></a></div></div></div></section>
+<section class="lr-section lr-faq" data-snippet="s_text_block" data-name="Helpful Answers"><div class="lr-container"><div class="lr-section-heading"><div><span class="lr-eyebrow">A FEW HELPFUL ANSWERS</span><h2>Before you <em>pop in.</em></h2></div></div><details><summary>Where is La Rosa located?</summary><p>We’re at North Hills Plaza, Santa Cruz, Trinidad and Tobago. Use the Get directions button to open a route from your location.</p></details><details><summary>How can I check if an item is available?</summary><p>Browse the online shop or contact us by phone or WhatsApp for help with a particular item, size or colour.</p></details><details><summary>Can I ask about supplies for a project?</summary><p>Of course. Send us a message with the items you’re looking for, or bring your list when you visit.</p></details></div></section></div>
+          </t>
+        </t>
+      </field>
+    </record>
+  <record id="redirect_contact" model="website.rewrite"><field name="name">La Rosa contact page</field><field name="website_id" ref="website.default_website"/><field name="url_from">/contactus</field><field name="url_to">/visit-la-rosa</field><field name="redirect_type">302</field></record>
+</data>
+</odoo>

@@ -1,0 +1,8 @@
+// Presentation only: native Odoo navigation and workflow are unchanged.
+.o_web_client {
+ .o_main_navbar { background: #650b18; border-bottom-color: #8a2537; }
+ .o_main_navbar .o_menu_brand, .o_main_navbar .o_menu_sections > button,
+ .o_main_navbar .o_menu_sections > .dropdown > button { color: #fff4e7; }
+ .o_main_navbar .o_menu_sections > button:hover { background: #8a2537; }
+ .o_form_view .o_horizontal_separator { color: #650b18; }
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+ <template id="phone_link" name="La Rosa phone"><a t-if="website.larosa_phone" t-att-href="website._larosa_phone_url()" class="lr-phone"><i class="fa fa-phone" aria-hidden="true"/><span t-out="website.larosa_phone"/></a></template>
+ <template id="topbar" name="La Rosa announcement">
+  <div t-if="website.larosa_brand_enabled" class="lr-topbar"><div class="lr-container"><a href="/visit-la-rosa"><i class="fa fa-map-marker" aria-hidden="true"/> A little colour, right here in Santa Cruz.</a><t t-call="larosa_website.phone_link"/></div></div>
+ </template>
+ <template id="footer" name="La Rosa footer">
+  <div class="lr-footer lr-content"><div class="lr-container lr-footer-grid">
+   <div class="lr-footer-brand"><a href="/" aria-label="La Rosa home"><img src="/larosa_website/static/src/img/la-rosa-logo.png" alt="La Rosa — Arts, Crafts, Stationery" width="1624" height="969" loading="lazy"/></a><p>For the things you love to make.<br/>And the ideas you have yet to imagine.</p><div class="lr-colour-dots" aria-hidden="true"><span/><span/><span/><span/></div></div>
+   <div><h2>Explore</h2><a href="/shop">Shop all products</a><a href="/creative-corner">Creative Corner</a><a href="/about-la-rosa">Our story</a><a href="/my/home">My account</a></div>
+   <div><h2>Let’s create</h2><a t-att-href="website._larosa_category_url('category_art')">Art supplies</a><a t-att-href="website._larosa_category_url('category_crafts')">Crafts &amp; DIY</a><a t-att-href="website._larosa_category_url('category_stationery')">Stationery</a><a t-att-href="website._larosa_category_url('category_school')">School essentials</a></div>
+   <div><h2>Come say hello</h2><p class="lr-address" t-out="website.larosa_address"/><t t-call="larosa_website.phone_link"/><a t-att-href="website._larosa_directions_url()" target="_blank" rel="noopener noreferrer">Get directions <i class="fa fa-long-arrow-right lr-arrow-icon" aria-hidden="true"/></a><p t-if="website.larosa_hours" class="lr-address lr-hours" t-out="website.larosa_hours"/></div>
+  </div><div class="lr-container lr-footer-bottom"><span>La Rosa · Arts, Crafts &amp; Stationery</span><a href="https://spxcorp.net" target="_blank" rel="noopener noreferrer">Developed by Spxcorp Limited.</a></div></div>
+ </template>
+ <template id="layout_brand" inherit_id="website.layout" priority="99" name="La Rosa storefront branding">
+  <xpath expr="//div[@id='wrapwrap']" position="attributes"><attribute name="t-attf-class" add="#{'larosa-site' if website.larosa_brand_enabled else ''}" separator=" "/></xpath>
+  <xpath expr="//header/*[1]" position="before"><t t-call="larosa_website.topbar"/></xpath>
+  <xpath expr="//footer[@id='bottom']" position="inside"><t t-if="website.larosa_brand_enabled and not no_footer" t-call="larosa_website.footer"/></xpath>
+  <xpath expr="//div[@id='wrapwrap']" position="inside"><a t-if="website.larosa_brand_enabled and website._larosa_whatsapp_url()" t-att-href="website._larosa_whatsapp_url()" class="lr-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with La Rosa on WhatsApp"><i class="fa fa-whatsapp" aria-hidden="true"/></a></xpath>
+ </template>
+<template id="larosa_header_order" inherit_id="website_sale.template_header_default" priority="60" name="La Rosa native header order">
+    <xpath expr="//t[@t-call='website.placeholder_header_text_element']" position="attributes"><attribute name="t-if">not website.larosa_brand_enabled</attribute></xpath>
+    <xpath expr="//t[@t-call='website.placeholder_header_call_to_action']" position="attributes"><attribute name="t-if">not website.larosa_brand_enabled</attribute></xpath>
+    <xpath expr="//t[@t-call='portal.user_dropdown']" position="attributes">
+      <attribute name="_user_name">not website.larosa_brand_enabled</attribute>
+      <attribute name="_icon">website.larosa_brand_enabled</attribute>
+      <attribute name="_link_class.f"/>
+      <attribute name="_link_class">'o_navlink_background btn rounded-circle position-relative text-reset' if website.larosa_brand_enabled else ((_additional_btn_color or 'nav-link') + ' border-0')</attribute>
+    </xpath>
+    <xpath expr="//t[@t-call='website_sale.header_cart_link']" position="attributes"><attribute name="t-if">not website.larosa_brand_enabled</attribute></xpath>
+    <xpath expr="//t[@t-call='portal.user_dropdown']" position="after">
+      <t t-if="website.larosa_brand_enabled" t-call="website_sale.header_cart_link" _icon="True" _text="False" _item_class.f="o_no_autohide_item" _link_class.f="o_navlink_background btn rounded-circle position-relative text-reset" _badge_class.f="position-absolute top-0 end-0"/>
+    </xpath>
+  </template>
+
+ <template id="mobile_contact" inherit_id="website.template_header_mobile" name="La Rosa mobile contact">
+  <xpath expr="//t[@t-call='website.placeholder_header_text_element']" position="before"><li t-if="website.larosa_brand_enabled" class="lr-mobile-contact"><t t-call="larosa_website.phone_link"/></li></xpath>
+  <xpath expr="//t[@t-call='website.placeholder_header_text_element']" position="attributes"><attribute name="t-if">not website.larosa_brand_enabled</attribute></xpath>
+  <xpath expr="//t[@t-call='website.header_call_to_action_large']" position="attributes"><attribute name="t-if">not website.larosa_brand_enabled</attribute></xpath>
+ </template>
+</odoo>

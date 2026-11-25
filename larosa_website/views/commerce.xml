@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+ <template id="departments" name="La Rosa departments">
+  <section class="lr-section lr-departments" data-snippet="s_text_block" data-name="La Rosa Departments"><div class="lr-container">
+   <div class="lr-section-heading"><div><span class="lr-eyebrow">WHAT WILL YOU MAKE TODAY?</span><h2>Find your kind of <em>creative.</em></h2></div><a href="/shop" class="lr-text-link">Explore the shop <i class="fa fa-long-arrow-right lr-arrow-icon" aria-hidden="true"/></a></div>
+   <div class="lr-department-grid">
+    <a t-att-href="website._larosa_category_url('category_art')" class="lr-department lr-reveal"><div class="lr-photo"><img src="/larosa_website/static/src/img/watercolour.webp" alt="Watercolour paints, brushes and floral artwork" width="1000" height="665" loading="lazy"/></div><div class="lr-department-copy"><span class="lr-number">01 / GET INSPIRED</span><h3>Art supplies <i class="fa fa-long-arrow-right lr-arrow-icon" aria-hidden="true"/></h3><p>Colour outside the lines.</p></div></a>
+    <a t-att-href="website._larosa_category_url('category_crafts')" class="lr-department lr-reveal"><div class="lr-photo"><img src="/larosa_website/static/src/img/crafts.webp" alt="Paper, paint and tools on a craft table" width="1000" height="667" loading="lazy"/></div><div class="lr-department-copy"><span class="lr-number">02 / MAKE IT YOURS</span><h3>Crafts &amp; DIY <i class="fa fa-long-arrow-right lr-arrow-icon" aria-hidden="true"/></h3><p>A little handmade happiness.</p></div></a>
+    <a t-att-href="website._larosa_category_url('category_stationery')" class="lr-department lr-reveal"><div class="lr-photo"><img src="/larosa_website/static/src/img/pencils.webp" alt="A colourful collection of sharpened pencils" width="1000" height="667" loading="lazy"/></div><div class="lr-department-copy"><span class="lr-number">03 / START SOMETHING</span><h3>Stationery <i class="fa fa-long-arrow-right lr-arrow-icon" aria-hidden="true"/></h3><p>Big ideas begin on paper.</p></div></a>
+   </div>
+  </div></section>
+ </template>
+ <template id="featured_products" name="La Rosa live catalogue">
+  <t t-set="lr_products" t-value="website._larosa_products()"/>
+  <t t-set="lr_categories" t-value="website._larosa_categories()"/>
+  <section t-if="lr_products" class="lr-section lr-products-section" contenteditable="false"><div class="lr-container">
+   <t t-set="lr_prices" t-value="lr_products._get_sales_prices(website)"/>
+   <div class="lr-section-heading"><div><span class="lr-eyebrow">A FEW THINGS TO GET YOU STARTED</span><h2>Your next project <em>starts here.</em></h2></div><a href="/shop" class="lr-text-link">Shop all products <i class="fa fa-long-arrow-right lr-arrow-icon" aria-hidden="true"/></a></div>
+   <nav t-if="lr_categories" class="lr-category-links" aria-label="Product categories"><a href="/shop">All products</a><a t-foreach="lr_categories" t-as="category" t-att-href="'/shop/category/' + website.env['ir.http']._slug(category)" t-out="category.name"/></nav>
+   <div class="lr-product-grid"><article t-foreach="lr_products" t-as="product" class="lr-product">
+    <a t-att-href="product.website_url" class="lr-product-photo"><img t-att-src="'/web/image/product.template/%s/image_512' % product.id" t-att-alt="product.name" width="512" height="512" loading="lazy"/><span class="lr-view-product">Take a closer look <i class="fa fa-long-arrow-right lr-arrow-icon" aria-hidden="true"/></span></a>
+    <h3><a t-att-href="product.website_url" t-field="product.name"/></h3>
+    <t t-set="price" t-value="lr_prices[product.id]"/>
+    <div class="lr-price" t-if="not website.prevent_zero_price_sale or price['price_reduce']"><del t-if="price.get('base_price') and price['base_price'] &gt; price['price_reduce']"><span t-out="price['base_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/></del><strong t-out="price['price_reduce']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/></div>
+    <a t-else="" t-att-href="product.website_url" class="lr-text-link">Enquire about this item <i class="fa fa-long-arrow-right lr-arrow-icon" aria-hidden="true"/></a>
+   </article></div>
+  </div></section>
+ </template>
+ <template id="visit_banner" name="La Rosa visit invitation"><section class="lr-visit-banner" data-snippet="s_text_block" data-name="Visit La Rosa"><div class="lr-container"><div><span class="lr-eyebrow">YOUR CREATIVE STOP IN SANTA CRUZ</span><h2>Good ideas deserve<br/>a little <em>La Rosa.</em></h2><p>Find us at North Hills Plaza, Santa Cruz.<br/>Come for the essentials. Leave inspired.</p></div><div class="lr-visit-actions"><a class="lr-button lr-button-light" t-att-href="website._larosa_directions_url()" target="_blank" rel="noopener noreferrer">Get directions <i class="fa fa-long-arrow-right lr-arrow-icon" aria-hidden="true"/></a><t t-call="larosa_website.phone_link"/></div></div></section></template>
+</odoo>

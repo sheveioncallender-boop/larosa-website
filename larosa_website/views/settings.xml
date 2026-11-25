@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+ <record id="settings_larosa" model="ir.ui.view">
+  <field name="name">La Rosa website settings</field><field name="model">res.config.settings</field>
+  <field name="inherit_id" ref="website.res_config_settings_view_form"/>
+  <field name="arch" type="xml"><xpath expr="//app[@name='website']" position="inside">
+   <block title="La Rosa" name="larosa_settings">
+    <setting string="La Rosa storefront" help="Enable La Rosa website styling on the selected website. Backend brand colours apply throughout this database while the module is installed."><field name="larosa_brand_enabled"/></setting>
+    <setting string="Telephone and WhatsApp"><label for="larosa_phone"/><field name="larosa_phone"/><label for="larosa_whatsapp"/><field name="larosa_whatsapp" placeholder="18684634578"/></setting>
+    <setting string="Store location" help="Used for the contact details and Google Maps directions."><field name="larosa_address"/></setting>
+    <setting string="Opening hours" help="Leave blank until hours are confirmed."><field name="larosa_hours" placeholder="Enter confirmed opening hours"/></setting>
+   </block>
+  </xpath></field>
+ </record>
+ <record id="product_larosa" model="ir.ui.view">
+  <field name="name">La Rosa product feature</field><field name="model">product.template</field>
+  <field name="inherit_id" ref="product.product_template_form_view"/>
+  <field name="arch" type="xml"><xpath expr="//page[@name='sales']" position="inside"><group string="La Rosa Website"><field name="larosa_featured"/></group></xpath></field>
+ </record>
+</odoo>
