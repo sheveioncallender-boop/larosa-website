@@ -1,14 +1,15 @@
 {
     'name': 'La Rosa — Website & Shop',
-    'version': '19.0.1.0.0',
+    'version': '19.0.1.1.0',
     'summary': 'Arts, crafts and stationery storefront with native Odoo eCommerce and La Rosa backend colours',
     'category': 'Website/eCommerce',
     'author': 'Spxcorp Limited',
     'website': 'https://spxcorp.net',
     'license': 'LGPL-3',
-    'depends': ['website_sale'],
+    'depends': ['website_sale', 'point_of_sale'],
     'data': [
         'views/settings.xml', 'views/layout.xml', 'views/commerce.xml',
+        'views/pos_display.xml',
         'data/categories.xml', 'data/pages.xml',
     ],
     'assets': {

@@ -3,9 +3,9 @@
 A complete La Rosa arts, crafts and stationery storefront, packaged as one installable Odoo addon for CloudPepper. Developed by Spxcorp Limited.
 
 **Module:** `larosa_website`
-**Version:** `19.0.1.0.0`
+**Version:** `19.0.1.1.0`
 **Target:** Odoo 19 Community
-**Dependency:** Odoo's standard `website_sale` (installed automatically as needed). No Enterprise modules, external Python packages, API keys, or build steps are required.
+**Dependencies:** Odoo's standard `website_sale` and `point_of_sale` (installed automatically as needed). No Enterprise modules, external Python packages, API keys, or build steps are required.
 
 ## Install with CloudPepper
 
@@ -47,6 +47,10 @@ Unpublishing or archiving removes a product from the homepage. Category links an
 No demonstration products, artificial stock, fictitious prices, payment providers or delivery promises are installed. The homepage remains fully designed when the catalogue is empty. Departments link to Shop until their corresponding categories become publicly available.
 
 Payments, delivery rules, currency, taxes, stock visibility and customer accounts use your existing Odoo configuration. This module does not configure a payment gateway or change the company currency.
+
+## POS product names
+
+POS product cards display the complete product name, wrapping onto as many lines as needed. Cards grow to fit details such as colour, size and pack quantity. The inherited POS entry template scopes this styling to the product grid; receipts and order lines keep their native layout. Reload open POS tabs after installing or upgrading.
 
 ## Brand and contact settings
 

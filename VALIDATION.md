@@ -1,4 +1,17 @@
-# Validation — La Rosa 19.0.1.0.0
+# Validation — La Rosa 19.0.1.1.0
+
+POS display update checked on 25 November 2026:
+
+- Python/XML and manifest/local reference validation passed.
+- Odoo live view import validation passed; inherited POS template installed successfully.
+- Live POS screenshot confirmed the entire name **Motarro Glitter Foam Sheet Red 40x60cm (Single)** is visible on its card.
+- All three available product cards were checked: line clamping is removed, text scroll height equals client height, and text stays within each card.
+- No sale was validated and the existing session was not closed.
+- The live view uses `larosa_website.pos_full_product_names`, matching the repository for future module upgrades.
+
+The full website test suite below was run for version 19.0.1.0.0; it was not repeated for this scoped POS style change.
+
+## Website baseline — La Rosa 19.0.1.0.0
 
 Checked on 25 November 2026 in a disposable Odoo 19 Community database. No live client database was used.
 
